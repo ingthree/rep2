@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>resource/apple.png</file>
+        <file>resource/apple-1.png</file>
+        <file>resource/apple-2.png</file>
+        <file>resource/background.jpg</file>
+        <file>resource/background.png</file>
+        <file>resource/banana.png</file>
+        <file>resource/banana-1.png</file>
+        <file>resource/banana-2.png</file>
+        <file>resource/basaha.png</file>
+        <file>resource/basaha-1.png</file>
+        <file>resource/basaha-2.png</file>
+        <file>resource/bomb-1.png</file>
+        <file>resource/bomb-2.png</file>
+        <file>resource/bomb-3.png</file>
+        <file>resource/bomb-4.png</file>
+        <file>resource/bomb-5.png</file>
+        <file>resource/bomb-6.png</file>
+        <file>resource/bomb-7.png</file>
+        <file>resource/boom.png</file>
+        <file>resource/boomlight1.png</file>
+        <file>resource/knife_50x50.png</file>
+        <file>resource/peach.png</file>
+        <file>resource/peach-1.png</file>
+        <file>resource/peach-2.png</file>
+        <file>resource/sandia.png</file>
+        <file>resource/sandia-1.png</file>
+        <file>resource/sandia-2.png</file>
+    </qresource>
+</RCC>

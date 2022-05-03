@@ -11,6 +11,7 @@
 #include <QTimer>
 #include <QMouseEvent>
 #include <banana.h>
+#include <apple.h>
 #include <trap.h>
 #include <watermelon.h>
 #include <QLabel>
@@ -32,6 +33,7 @@ public:
     QTimer Timer;
     Banana banana[20];
     Watermelon watermelon[20];
+    Apple apple[20];
     int fruitRecorded;
     Trap trap[5];
     void initial();
@@ -46,6 +48,7 @@ public:
     int getDistanceBAK(Banana B,Knife K);
     int getDistanceWAK(Watermelon W,Knife K);
     int getDistanceTAK(Trap T,Knife K);
+    int getDistanceAAK(Apple A,Knife K);
     explicit Classical(QWidget *parent = 0);
     ~Classical();
 

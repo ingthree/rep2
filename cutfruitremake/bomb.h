@@ -1,6 +1,6 @@
 #ifndef BOMB_H
 #define BOMB_H
-#define BOMB_PATH ":/image/resource/bomb-%1.png"
+#define BOMB_PATH ":/image/resource/bomb-%1.png.png"
 #define WMBOMB_PATH ":/image/resource/sandia-1.png"
 #define BNBOMB_PATH ":/image/resource/banana-1.png.png"
 #include <QPaintEvent>

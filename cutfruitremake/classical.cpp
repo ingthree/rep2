@@ -68,13 +68,23 @@ void Classical::paintEvent(QPaintEvent *)
 
          }
      }
+     for(int i=0;i<20;i++)
+     {
+         if(!apple[i].isFree)
+         {
+             if(!apple[i].isDestroyed)
+                 painter.drawPixmap(apple[i].x,apple[i].y,apple[i].apple);
+
+         }
+     }
      for(int i=0;i<5;i++)
      {
          if(!trap[i].isFree)
          {
              if(!trap[i].isDestroyed)
                  painter.drawPixmap(trap[i].x,trap[i].y,trap[i].trap);
-
+             else if(!trap[i].bomb.isPlayde)
+                     painter.drawPixmap(trap[i].x,trap[i].y,trap[i].bomb.bombPix[trap[i].bomb.index]);
          }
      }
      painter.drawPixmap(myKnife.x,myKnife.y,myKnife.myKnife);
@@ -103,6 +113,10 @@ void Classical::updatePositino()
                 watermelon[i].updatePosition();
             }
         for(int i=0;i<20;i++)
+            if(!apple[i].isFree&&!apple[i].isDestroyed){
+                apple[i].updatePosition();
+            }
+        for(int i=0;i<20;i++)
             if(!banana[i].isFree&&!banana[i].isDestroyed){
                 banana[i].updatePosition();
             }
@@ -128,11 +142,13 @@ void Classical::FruitShow()
         return;
     fruitRecorded=0;
     int fruitCount;
-    fruitCount=rand()%4+3;
+    fruitCount=rand()%4+4;
     int trapCount;
-    trapCount=rand()%3;
+    trapCount=rand()%2;
+    int appleCount;
+    appleCount=rand()%4;
     int watermelonCount;
-    watermelonCount=rand()%(fruitCount-trapCount+1);
+    watermelonCount=rand()%(fruitCount-trapCount-appleCount+1);
     int bananaCount;
     bananaCount=fruitCount-trapCount-watermelonCount;
     int j;
@@ -142,6 +158,16 @@ void Classical::FruitShow()
             trap[i+j].isFree = false;
             trap[i+j].x = trap[i+j].isReverse*(600-trap[i+j].trap.width());
             trap[i+j].y = rand()%300+175;
+            i++;
+        }
+    for(int i=0,j=0;i<appleCount&&(i+j<20);j++)
+        if(apple[i+j].isFree){
+            apple[i+j].isReverse=rand()%2;
+            apple[i+j].isFree = false;
+            apple[i+j].isMissed=false;
+            apple[i+j].isDestroyed=false;
+            apple[i+j].x = apple[i+j].isReverse*(600-apple[i+j].apple.width());
+            apple[i+j].y = rand()%300+175;
             i++;
         }
     for(int i=0,j=0;i<watermelonCount&&(i+j<20);j++)
@@ -183,6 +209,7 @@ void Classical::collisionDetetion()
         else if(banana[i].isMissed)
         {
             myKnife.life--;
+            banana[i].isMissed=false;
         }
 
     }
@@ -202,10 +229,29 @@ void Classical::collisionDetetion()
             else if(watermelon[i].isMissed)
             {
                 myKnife.life--;
+                watermelon[i].isMissed=false;
             }
         }
     }
 
+    for(int i=0;i<20;i++)
+    {
+        if(!apple[i].isFree&&!apple[i].isDestroyed)
+        {
+            if(getDistanceAAK(apple[i], myKnife)<50)
+            {
+                Score++;
+                apple[i].isDestroyed=true;
+                apple[i].isFree=true;
+
+            }
+            else if(apple[i].isMissed)
+            {
+                myKnife.life--;
+                apple[i].isMissed=false;
+            }
+        }
+    }
     for(int i=0;i<5;i++)
     {
         if(!trap[i].isFree&&!trap[i].isDestroyed)
@@ -245,4 +291,9 @@ int Classical::getDistanceWAK(Watermelon W,Knife K)
 int Classical::getDistanceTAK(Trap T,Knife K)
 {
     return sqrt((T.x-20-K.x)*(T.x-20-K.x)+(T.y+20-K.y)*(T.y+20-K.y));
+}
+
+int Classical::getDistanceAAK(Apple A, Knife K)
+{
+    return sqrt((A.x-20-K.x)*(A.x-20-K.x)+(A.y+20-K.y)*(A.y+20-K.y));
 }

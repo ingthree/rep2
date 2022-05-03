@@ -9,8 +9,8 @@ Trap::Trap()
     speed = 1;
     isFree=true;
     isReverse=0;
-   bomb.getFruit('t');
-   bomb.intitial();
+    bomb.getFruit('t');
+    bomb.intitial();
 }
 
 void Trap::updatePosition(){
@@ -18,12 +18,12 @@ void Trap::updatePosition(){
     {
         if(isReverse==0)
         {
-            x+=1;
+            x+=1.5;
             y+=0.004*x-1.2;
         }
         else
         {
-            x-=1;
+            x-=1.5;
             y+=0.004*(600-x)-1.2;
         }
     }

@@ -14,7 +14,6 @@ public:
     char fruitname;
     void getFruit(char f);
     void updateInfo();
-
     int x;
     int y;
     QVector<QPixmap> bombPix;

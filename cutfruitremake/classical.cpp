@@ -260,6 +260,8 @@ void Classical::collisionDetetion()
             {
             myKnife.life--;
             trap[i].isDestroyed=true;
+            trap[i].bomb.x = trap[i].x;
+            trap[i].bomb.y = trap[i].y;
 
 
             }

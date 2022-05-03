@@ -31,6 +31,7 @@ void Bomb::updateInfo(){
         return;
     recored = 0;
     index++;
-    isPlayde = true;
+    if(index>6)
+        isPlayde = true;
 }
 

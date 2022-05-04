@@ -7,7 +7,7 @@ EndGame::EndGame(QWidget *parent) :
 }
 
 EndGame::EndGame(int x){
-    resize(100,100);
+    resize(310,310);
     Again = new QPushButton("Again");
     Score = new QLabel(this);
     Score->setText(QString(SCORE).arg(x));
@@ -32,7 +32,7 @@ EndGame::EndGame(int x){
 
     setAutoFillBackground(true);
     QPalette pal;
-    QPixmap pixmap(":/image/images/background.png");
+    QPixmap pixmap(":/image/resource/b00a96c91295e8d4116edaa24078602f.png");
     pal.setBrush(QPalette::Background, QBrush(pixmap));;
     setPalette(pal);
 

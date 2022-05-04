@@ -58,8 +58,8 @@ HelpWidget::HelpWidget(QWidget *parent) :
     Label1->setText("本游戏为水果忍者游戏的模仿尝试");
     Label2->setText("在游戏中，你可以通过鼠标拖拽来代替手指，从而移动刀片");
     Label3->setText("同样的 切到水果会增加分数，但遗漏或切到炸弹将会让生命值减少");
-    Label4->setText("祝你好运！");
-    Label5->setText("");
+    Label4->setText("关卡分为一二两关 难度第二关略高");
+    Label5->setText("祝你好运！");
     Label6->setText("");
     Label7->setText("     ");
     Label8->setText("");

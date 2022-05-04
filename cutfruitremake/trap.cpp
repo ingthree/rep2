@@ -27,6 +27,6 @@ void Trap::updatePosition(){
             y+=0.004*(600-x)-1.2;
         }
     }
-    if(y>600||x>600||x<0)
+    if(y>600||x>600||x<0||y<0)
         isFree = true;
 }

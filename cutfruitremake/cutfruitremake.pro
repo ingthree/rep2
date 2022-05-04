@@ -12,7 +12,9 @@ SOURCES += \
     apple.cpp \
     banana.cpp \
     bomb.cpp \
+    choose.cpp \
     classical.cpp \
+    classical2.cpp \
     endgame.cpp \
     helpwidget.cpp \
     knife.cpp \
@@ -25,7 +27,9 @@ HEADERS += \
     apple.h \
     banana.h \
     bomb.h \
+    choose.h \
     classical.h \
+    classical2.h \
     endgame.h \
     helpwidget.h \
     knife.h \

@@ -6,6 +6,7 @@
 #include <QBrush>
 #include <classical.h>
 #include <helpwidget.h>
+#include <choose.h>
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
@@ -50,7 +51,7 @@ Widget::Widget(QWidget *parent)
     connect(Help,&QPushButton::clicked,this,&Widget::HelpClick);
 }
 void Widget::startClick(){
-    Classical *E=new Classical;
+    Choose *E=new Choose;
     E->show();
     this->close();
 }

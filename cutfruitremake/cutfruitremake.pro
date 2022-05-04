@@ -14,6 +14,7 @@ SOURCES += \
     bomb.cpp \
     classical.cpp \
     endgame.cpp \
+    helpwidget.cpp \
     knife.cpp \
     main.cpp \
     trap.cpp \
@@ -26,6 +27,7 @@ HEADERS += \
     bomb.h \
     classical.h \
     endgame.h \
+    helpwidget.h \
     knife.h \
     trap.h \
     watermelon.h \

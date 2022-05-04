@@ -5,6 +5,7 @@
 #include <QPalette>
 #include <QBrush>
 #include <classical.h>
+#include <helpwidget.h>
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
@@ -58,7 +59,8 @@ void Widget::quitClick(){
 }
 
 void Widget::HelpClick(){
-
+    HelpWidget *h = new HelpWidget;
+    h->show();
 }
 Widget::~Widget()
 {

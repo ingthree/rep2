@@ -3,6 +3,7 @@
 #include <QDialog>
 #include <QPushButton>
 #include <QHBoxLayout>
+#include <QSound>
 #include "widget.h"
 #include "classical.h"
 #include "classical2.h"
@@ -12,6 +13,7 @@ class Choose: public QWidget
     Q_OBJECT
 public:
     Choose();
+    QSound *startsound;
     QPushButton* classical;
     QPushButton* classical2;
     QLabel *label1;

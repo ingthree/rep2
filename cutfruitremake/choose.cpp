@@ -53,6 +53,10 @@ Choose::Choose()
     connect(classical,&QPushButton::clicked,this,&Choose::ClassicalClicked);
     connect(classical2,&QPushButton::clicked,this,&Choose::Classical2Clicked);
     connect(Quit,&QPushButton::clicked,this,&Choose::QuitClicked);
+
+    QSound *startsound=new QSound(":/image/resource/3619.wav",this);
+    startsound->play();  //播放
+    startsound->setLoops(-1);//循环次数，-1代表一直循环
 }
 
 void Choose::ClassicalClicked(){

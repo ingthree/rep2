@@ -2,27 +2,15 @@
 
 Bomb::Bomb()
 {
+    for(int i=0;i<7;i++){
+        QString str = QString(BOMB_PATH).arg(i);
+        bombPix.push_back(str);
+    }
     recored = 0;
     index = 0;
     x = 0;
     y = 0;
     isPlayde = false;
-}
-
-void Bomb::intitial()
-{
-     if(fruitname=='t')
-    {
-        for(int i=0;i<6;i++)
-        {
-        QString str = QString(BOMB_PATH).arg(i);
-        bombPix.push_back(str);
-        }
-    }
-}
-void Bomb::getFruit(char f)
-{
-    fruitname=f;
 }
 
 void Bomb::updateInfo(){
@@ -34,4 +22,3 @@ void Bomb::updateInfo(){
     if(index>6)
         isPlayde = true;
 }
-

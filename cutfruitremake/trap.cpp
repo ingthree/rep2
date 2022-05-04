@@ -9,8 +9,6 @@ Trap::Trap()
     speed = 1;
     isFree=true;
     isReverse=0;
-    bomb.getFruit('t');
-    bomb.intitial();
 }
 
 void Trap::updatePosition(){

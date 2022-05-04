@@ -105,9 +105,14 @@ void Classical::updatePositino()
     life->setText(QString(LIFE).arg(myKnife.life));	//随时更新相关信息
         score->setText(QString(SCORE).arg(Score));
         for(int i=0;i<5;i++)
+        {
             if(!trap[i].isFree&&!trap[i].isDestroyed){
                 trap[i].updatePosition();
             }
+            if(trap[i].isDestroyed&&!trap[i].isFree){
+               trap[i].bomb.updateInfo();
+            }
+        }
         for(int i=0;i<20;i++)
             if(!watermelon[i].isFree&&!watermelon[i].isDestroyed){
                 watermelon[i].updatePosition();

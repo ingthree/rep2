@@ -16,6 +16,8 @@
 #include <watermelon.h>
 #include <QLabel>
 #include <endgame.h>
+#include <QSound>
+#define FDSOUND ":/image/resource/5053.wav"
 #define SCORE "Score: %1"
 #define LIFE  "Life:  %1"
 
@@ -26,6 +28,7 @@ public:
     bool win;
     bool winPlayed;
     int Score;
+    QSound* Player;
     QLabel* score;
     QLabel* life;
     Knife myKnife;

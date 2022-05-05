@@ -10,6 +10,7 @@ using namespace std;
 
 Classical2::Classical2(QWidget *parent) : QWidget(parent)
 {
+    QWidget::setCursor(QCursor(Qt::BlankCursor));
     setAttribute(Qt::WA_DeleteOnClose,true);
     resize(600,550);
     Score = 0;
@@ -28,6 +29,7 @@ Classical2::Classical2(QWidget *parent) : QWidget(parent)
     lay->addWidget(life);
     lay->addWidget(score);
     setLayout(lay);
+    Player=new QSound(FDSOUND);
     win = false;
     winPlayed = false;
     initial();
@@ -114,17 +116,32 @@ void Classical2::updatePositino()
             }
         }
         for(int i=0;i<20;i++)
+        {
             if(!watermelon[i].isFree&&!watermelon[i].isDestroyed){
                 watermelon[i].updatePosition();
             }
+            if(watermelon[i].isDestroyed&&!watermelon[i].isFree){
+               Player->play();
+            }
+        }
         for(int i=0;i<20;i++)
+        {
             if(!apple[i].isFree&&!apple[i].isDestroyed){
                 apple[i].updatePosition();
             }
+            if(apple[i].isDestroyed&&!apple[i].isFree){
+               Player->play();
+            }
+        }
         for(int i=0;i<20;i++)
+        {
             if(!banana[i].isFree&&!banana[i].isDestroyed){
                 banana[i].updatePosition();
             }
+            if(banana[i].isDestroyed&&!banana[i].isFree){
+               Player->play();
+            }
+        }
 }
 
 void Classical2::startGame(){

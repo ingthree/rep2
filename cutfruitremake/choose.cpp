@@ -4,26 +4,26 @@
 Choose::Choose()
 {
     setAttribute(Qt::WA_DeleteOnClose,true);
-    resize(500,600);
+    resize(800,600);
     setWindowTitle("Choose");
     classical = new QPushButton("1");
     classical2 = new QPushButton("2");
 
     Quit = new QPushButton("Quit");
 
-    Quit->setFont(QFont("Algerian",18));
+    Quit->setFont(QFont("Algerian",24));
     Quit->setStyleSheet("QPushButton{background: transparent; color:white; }"
                                 "QPushButton:hover{color:red;}");
 
-    classical->setFont(QFont("Algerian",18));
+    classical->setFont(QFont("Algerian",24));
     classical->setStyleSheet("QPushButton{background: transparent; color:white; }"
                                 "QPushButton:hover{color:red;}");
-    classical2->setFont(QFont("Algerian",18));
+    classical2->setFont(QFont("Algerian",24));
     classical2->setStyleSheet("QPushButton{background: transparent; color:white; }"
                                 "QPushButton:hover{color:red;}");
     label1 = new QLabel(this);
 
-    label1->setFont(QFont("Algerian",18));
+    label1->setFont(QFont("Algerian",24));
     label1->setStyleSheet("QLabel{background: transparent; color:white; }"
                                 );
 
@@ -45,7 +45,8 @@ Choose::Choose()
 
     setAutoFillBackground(true);
     QPalette pal;
-    QPixmap pixmap(":/image/resource/background.png");
+    QPixmap pixmap(":/image/resource/7af1e0431941caa6bc0357c050319cec.png");
+    pixmap=pixmap.scaled(800,600);
     pal.setBrush(QPalette::Background, QBrush(pixmap));;
     setPalette(pal);
 

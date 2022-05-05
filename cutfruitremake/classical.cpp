@@ -10,6 +10,7 @@ using namespace std;
 
 Classical::Classical(QWidget *parent) : QWidget(parent)
 {
+    QWidget::setCursor(QCursor(Qt::BlankCursor));
     setAttribute(Qt::WA_DeleteOnClose,true);
     resize(600,550);
     Score = 0;
@@ -27,6 +28,7 @@ Classical::Classical(QWidget *parent) : QWidget(parent)
     QVBoxLayout *lay = new QVBoxLayout;                     //垂直布局
     lay->addWidget(life);
     lay->addWidget(score);
+    Player=new QSound(FDSOUND);
     setLayout(lay);
     win = false;
     winPlayed = false;
@@ -91,8 +93,8 @@ void Classical::paintEvent(QPaintEvent *)
 }
 
 void Classical::mouseMoveEvent(QMouseEvent *E){
-    int x = E->x()-35;
-    int y = E->y()-40;
+    int x = E->x()-18;
+    int y = E->y()-15;
     if(x>0&&x<575)
         myKnife.x = x;
     if(y>0&&y<505)
@@ -114,17 +116,32 @@ void Classical::updatePositino()
             }
         }
         for(int i=0;i<20;i++)
+        {
             if(!watermelon[i].isFree&&!watermelon[i].isDestroyed){
                 watermelon[i].updatePosition();
             }
+            if(watermelon[i].isDestroyed&&!watermelon[i].isFree){
+               Player->play();
+            }
+        }
         for(int i=0;i<20;i++)
+        {
             if(!apple[i].isFree&&!apple[i].isDestroyed){
                 apple[i].updatePosition();
             }
+            if(apple[i].isDestroyed&&!apple[i].isFree){
+               Player->play();
+            }
+        }
         for(int i=0;i<20;i++)
+        {
             if(!banana[i].isFree&&!banana[i].isDestroyed){
                 banana[i].updatePosition();
             }
+            if(banana[i].isDestroyed&&!banana[i].isFree){
+               Player->play();
+            }
+        }
 }
 
 void Classical::startGame(){

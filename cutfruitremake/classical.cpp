@@ -248,11 +248,11 @@ void Classical::collisionDetetion()
                 watermelon[i].isFree=true;
 
             }
-            else if(watermelon[i].isMissed)
-            {
-                myKnife.life--;
-                watermelon[i].isMissed=false;
-            }
+        }
+        else if(watermelon[i].isMissed)
+        {
+            myKnife.life--;
+            watermelon[i].isMissed=false;
         }
     }
 

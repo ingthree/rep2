@@ -15,15 +15,15 @@ Bomb::Bomb()
 
 void Bomb::updateInfo(){
     recored++;
-    if(recored==12&&isPlayde==false)
-    {
-        QSound *bombSound=new QSound(BOMBSOUND_PATH);
-        bombSound->play();
-    }
     if(recored<20)
         return;
     recored = 0;
     index++;
+    if(index==1&&isPlayde==false)
+    {
+        QSound *bombSound=new QSound(BOMBSOUND_PATH);
+        bombSound->play();
+    }
     if(index>6)
         isPlayde = true;
 }

@@ -5,8 +5,6 @@ Apple::Apple()
     apple.load(":/image/resource/apple.png");
     x=rand()%2*(600-apple.width());
     y = 0;
-//    bomb.Bomb::getFruit('b');
-//    bomb.intitial();
     isFree=true;
     isMissed =false;
     isDestroyed = false;

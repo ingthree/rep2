@@ -122,6 +122,7 @@ void Classical::updatePositino()
             }
             if(watermelon[i].isDestroyed&&!watermelon[i].isFree){
                Player->play();
+               watermelon[i].isFree=true;
             }
         }
         for(int i=0;i<20;i++)
@@ -131,6 +132,7 @@ void Classical::updatePositino()
             }
             if(apple[i].isDestroyed&&!apple[i].isFree){
                Player->play();
+               apple[i].isFree=true;
             }
         }
         for(int i=0;i<20;i++)
@@ -140,6 +142,7 @@ void Classical::updatePositino()
             }
             if(banana[i].isDestroyed&&!banana[i].isFree){
                Player->play();
+               banana[i].isFree=true;
             }
         }
 }
@@ -224,7 +227,7 @@ void Classical::collisionDetetion()
              {
                 Score++;
                 banana[i].isDestroyed=true;
-                banana[i].isFree=true;
+
 
              }
         }
@@ -245,7 +248,7 @@ void Classical::collisionDetetion()
             {
                 Score++;
                 watermelon[i].isDestroyed=true;
-                watermelon[i].isFree=true;
+
 
             }
         }
@@ -264,7 +267,7 @@ void Classical::collisionDetetion()
             {
                 Score++;
                 apple[i].isDestroyed=true;
-                apple[i].isFree=true;
+
 
             }
             else if(apple[i].isMissed)

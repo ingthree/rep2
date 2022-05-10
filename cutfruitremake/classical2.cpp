@@ -28,8 +28,8 @@ Classical2::Classical2(QWidget *parent) : QWidget(parent)
     QVBoxLayout *lay = new QVBoxLayout;                     //垂直布局
     lay->addWidget(life);
     lay->addWidget(score);
+    Player1=new QSound(FDSOUND);
     setLayout(lay);
-    Player=new QSound(FDSOUND);
     win = false;
     winPlayed = false;
     initial();
@@ -93,8 +93,8 @@ void Classical2::paintEvent(QPaintEvent *)
 }
 
 void Classical2::mouseMoveEvent(QMouseEvent *E){
-    int x = E->x()-35;
-    int y = E->y()-40;
+    int x = E->x()-18;
+    int y = E->y()-15;
     if(x>0&&x<575)
         myKnife.x = x;
     if(y>0&&y<505)
@@ -121,7 +121,8 @@ void Classical2::updatePositino()
                 watermelon[i].updatePosition();
             }
             if(watermelon[i].isDestroyed&&!watermelon[i].isFree){
-               Player->play();
+               Player1->play();
+               watermelon[i].isFree=true;
             }
         }
         for(int i=0;i<20;i++)
@@ -130,7 +131,8 @@ void Classical2::updatePositino()
                 apple[i].updatePosition();
             }
             if(apple[i].isDestroyed&&!apple[i].isFree){
-               Player->play();
+               Player1->play();
+               apple[i].isFree=true;
             }
         }
         for(int i=0;i<20;i++)
@@ -139,7 +141,8 @@ void Classical2::updatePositino()
                 banana[i].updatePosition();
             }
             if(banana[i].isDestroyed&&!banana[i].isFree){
-               Player->play();
+               Player1->play();
+               banana[i].isFree=true;
             }
         }
 }
@@ -224,7 +227,7 @@ void Classical2::collisionDetetion()
              {
                 Score++;
                 banana[i].isDestroyed=true;
-                banana[i].isFree=true;
+              //  banana[i].isFree=true;
 
              }
         }

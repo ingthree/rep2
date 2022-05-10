@@ -52,7 +52,7 @@ public:
     int getDistanceWAK(Watermelon W,Knife K);
     int getDistanceTAK(Trap T,Knife K);
     int getDistanceAAK(Apple A,Knife K);
-    explicit Classical(QWidget *parent = 0);
+    explicit Classical(QWidget *parent = nullptr);
     ~Classical();
 
 };

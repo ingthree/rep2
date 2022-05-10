@@ -28,7 +28,7 @@ public:
     bool win;
     bool winPlayed;
     int Score;
-    QSound* Player;
+    QSound* Player1;
     QLabel* score;
     QLabel* life;
     Knife myKnife;
